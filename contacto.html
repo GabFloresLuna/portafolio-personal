@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Gab Flores Luna</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img src="img/logo_claro.png" alt="Logo Gab Flores Luna" class="logo">
+      <span class="brand-text">Gab Flores Luna</span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
+    <nav id="site-nav" class="site-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="portafolio.html">Portafolio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a class="is-active" href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrapper narrow">
+    <header class="page-header">
+      <h1>Hablemos</h1>
+      <p>¿Tienes una oportunidad o quieres feedback? Escríbeme.</p>
+    </header>
+
+    <form class="contact-form" action="https://formspree.io/f/tu-endpoint" method="POST">
+      <label>Nombre
+        <input name="nombre" type="text" required>
+      </label>
+      <label>Email
+        <input name="email" type="email" required>
+      </label>
+      <label>Mensaje
+        <textarea name="mensaje" rows="6" required></textarea>
+      </label>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+
+    <p class="alt-contact">También por correo: <a href="mailto:gabfloresluna@gmail.com">gabfloresluna@gmail.com</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Gab Flores Luna</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html> 

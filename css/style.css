@@ -1,83 +1,147 @@
-:root {
-  --light-blurple: #E0E3FF;
-  --verde: #57F287;
-  --amarillo: #FEE75C;
-  --fucsia: #EB459E;
-  --rojo: #ED4245;
-  --morado: #2E1A52;
-  --blanco: #F9FAFB;
-  --fuente-principal: 'Poppins', sans-serif;
-  --fuente-secundaria: 'Open Sans', sans-serif;
+/* ========= Variables y base ========= */
+:root{
+  --light-blurple:#E0E3FF;
+  --verde:#57F287;
+  --amarillo:#FEE75C;
+  --fucsia:#EB459E;
+  --rojo:#ED4245;
+  --morado:#2E1A52;
+  --blanco:#F9FAFB;
+  --fuente-principal:'Poppins',sans-serif;
+  --fuente-secundaria:'Open Sans',sans-serif;
+
+  --radius:16px;
+  --shadow:0 8px 24px rgba(0,0,0,.07);
+  --max:1100px;
+  --gap:1.25rem;
 }
 
-body {
-  font-family: var(--fuente-secundaria);
-  background-color: var(--blanco);
-  color: var(--morado);
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--fuente-secundaria);
+  background:var(--blanco);
+  color:var(--morado);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-header {
-  background-color: var(--light-blurple);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+/* ========= Layout ========= */
+.wrapper{max-width:var(--max);margin:auto;padding:2rem 1rem}
+.wrapper.narrow{max-width:720px}
+.page-header{margin-bottom:2rem}
+.page-header h1{font-family:var(--fuente-principal);margin:0 0 .5rem}
+
+/* ========= Header & nav ========= */
+.site-header{
+  position:sticky;top:0;z-index:10;
+  background:var(--light-blurple);
+  border-bottom:1px solid rgba(0,0,0,.05);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1rem;
+}
+.brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--morado)}
+.logo{height:40px;flex:0 0 auto}
+.brand-text{font-family:var(--fuente-principal);font-weight:700}
+
+.site-nav ul{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.site-nav a{color:var(--morado);text-decoration:none;font-weight:600;padding:.5rem .75rem;border-radius:10px}
+.site-nav a:hover{background:rgba(0,0,0,.05)}
+.site-nav .is-active{outline:2px solid rgba(0,0,0,.1)}
+
+.nav-toggle{display:none;background:none;border:0;font-size:1.5rem;line-height:1}
+
+/* ========= Hero ========= */
+.hero{padding:4rem 1rem;max-width:var(--max);margin:auto;text-align:center}
+.hero h1{font-family:var(--fuente-principal);font-size:clamp(2rem,5vw,3rem);margin:.25rem 0 1rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+
+/* ========= Botones ========= */
+.btn{display:inline-block;padding:.7rem 1.1rem;border-radius:12px;background:var(--verde);color:var(--morado);text-decoration:none;font-weight:700}
+.btn:hover{background:var(--amarillo)}
+.btn-alt{background:var(--fucsia);color:#fff}
+.btn-alt:hover{filter:brightness(1.05)}
+.btn-outline{background:transparent;border:2px solid var(--morado);color:var(--morado)}
+.btn-outline:hover{background:var(--light-blurple)}
+.btn-sm{padding:.5rem .85rem;border-radius:10px;font-weight:600}
+
+/* ========= Sección features ========= */
+.features{
+  display:grid;gap:var(--gap);grid-template-columns:repeat(3,1fr);
+  max-width:var(--max);margin:2rem auto;padding:0 1rem;
+}
+.features article{
+  background:#fff;border-radius:var(--radius);padding:1.25rem;box-shadow:var(--shadow)
+}
+.features h2{font-family:var(--fuente-principal);margin:.25rem 0 .5rem}
+
+/* ========= Cards de proyectos ========= */
+.grid{display:grid;gap:var(--gap)}
+.cards{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:1rem;display:flex;flex-direction:column;gap:.75rem}
+.card-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+
+/* ========= Formulario ========= */
+.contact-form{display:grid;gap:1rem}
+.contact-form label{display:grid;gap:.5rem;font-weight:600}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:.8rem;border-radius:12px;border:1.5px solid rgba(0,0,0,.12);font:inherit
+}
+.contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--light-blurple);border-color:transparent}
+.alt-contact{margin-top:1rem}
+
+/* ========= Footer ========= */
+.site-footer{margin-top:3rem;padding:1.25rem;text-align:center;background:var(--morado);color:var(--blanco)}
+.site-footer a{color:var(--amarillo);font-weight:700}
+
+/* ========= Utilidades ========= */
+.hidden{display:none !important}
+
+/* ====== Responsivo ====== */
+@media (max-width: 992px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .features{grid-template-columns:repeat(2,1fr)}
 }
 
-.logo {
-  height: 40px;
+@media (max-width: 640px){
+  .nav-toggle{display:block}
+  .site-nav{position:absolute;right:1rem;top:64px;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:.5rem;min-width:200px}
+  .site-nav ul{flex-direction:column}
+  .site-nav[hidden]{display:none}
+
+  .features{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .hero{padding:3rem 1rem}
+  .brand-text{display:none} /* para compactar en móvil */
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
+/* ====== Sobre mí ====== */
+.bio {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.bio-foto {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.bio-texto p {
+  margin-bottom: 1rem;
 }
 
-nav a {
-  text-decoration: none;
-  color: var(--morado);
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: var(--fucsia);
-}
-
-main {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-h1, h2 {
-  font-family: var(--fuente-principal);
-  color: var(--morado);
-}
-
-.botones a {
-  display: inline-block;
-  margin-right: 1rem;
-  padding: 0.6rem 1.2rem;
-  background-color: var(--verde);
-  color: var(--morado);
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.botones a:hover {
-  background-color: var(--amarillo);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--morado);
-  color: var(--blanco);
-  margin-top: 2rem;
+/* ====== Responsive ajustes ====== */
+@media (max-width: 768px) {
+  .bio {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .bio-foto {
+    max-width: 220px;
+    margin: 0 auto 1rem;
+  }
 }

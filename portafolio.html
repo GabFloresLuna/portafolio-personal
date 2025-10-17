@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inicio | Portafolio — Gab Flores Luna</title>
+  <title>Portafolio — Gab Flores Luna</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
@@ -12,51 +12,60 @@
   <header class="site-header">
     <a class="brand" href="index.html">
       <img src="img/logo_claro.png" alt="Logo Gab Flores Luna" class="logo">
-      <span class="brand-text">Gab Flores Luna</span>
+      <span class="brand-text">Gabriel Flores</span>
     </a>
-
     <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">☰</button>
-
-    <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+    <nav id="site-nav" class="site-nav">
       <ul>
         <li><a href="index.html">Inicio</a></li>
         <li><a class="is-active" href="portafolio.html">Portafolio</a></li>
         <li><a href="sobre-mi.html">Sobre mí</a></li>
         <li><a href="noticias.html">Noticias</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        
       </ul>
     </nav>
+    
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Hola, soy Gab Flores Luna 👋</h1>
-      <p>Desarrollador multidisciplinar con foco en innovación, creatividad y buenas prácticas.</p>
-      <div class="cta-row">
-        <a class="btn" href="https://github.com/GabFloresLuna" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-alt" href="https://www.linkedin.com/in/gabfloresluna" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-outline" href="portafolio.html">Ver proyectos</a>
-      </div>
-    </section>
+  <main class="wrapper">
+    <header class="page-header">
+      <h1>Proyectos destacados</h1>
+      <p>Una selección breve. Cada tarjeta puede llevar a GitHub o a un caso de estudio.</p>
+    </header>
 
-    <section class="features">
-      <article>
-        <h2>Lo que hago</h2>
-        <p>Construyo interfaces limpias, accesibles y responsivas, integrando diseño y código.</p>
+    <section class="grid cards">
+      <!-- Repite <article> por proyecto -->
+      <article class="card">
+        <img loading="lazy" src="img/proyecto-1.jpg" alt="Captura del proyecto 1">
+        <div class="card-body">
+          <h2>Proyecto 1</h2>
+          <p>Descripción corta del objetivo, stack y resultados.</p>
+          <div class="card-actions">
+            <a class="btn btn-sm" href="#" target="_blank" rel="noopener">Demo</a>
+            <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noopener">Código</a>
+          </div>
+        </div>
       </article>
-      <article>
-        <h2>Tecnologías</h2>
-        <p>HTML, CSS, JavaScript y buenas prácticas de versionado, performance y accesibilidad.</p>
+
+      <article class="card">
+        <img loading="lazy" src="img/proyecto-2.jpg" alt="Captura del proyecto 2">
+        <div class="card-body">
+          <h2>Proyecto 2</h2>
+          <p>Bajada breve que cuente el valor del proyecto.</p>
+          <div class="card-actions">
+            <a class="btn btn-sm" href="#" target="_blank" rel="noopener">Demo</a>
+            <a class="btn btn-outline btn-sm" href="#" target="_blank" rel="noopener">Código</a>
+          </div>
+        </div>
       </article>
-      <article>
-        <h2>Objetivo</h2>
-        <p>Mostrar proyectos claros y medibles para recruiters y consultoras TI.</p>
-      </article>
+
+      <!-- ...más artículos -->
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 Gab Flores Luna · <a href="mailto:gabfloresluna@gmail.com">gabfloresluna@gmail.com</a></p>
+    <p>© 2025 Gabriel Flores</p>
   </footer>
 
   <script src="js/script.js"></script>

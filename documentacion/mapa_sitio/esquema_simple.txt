@@ -1,0 +1,14 @@
+Inicio
+ ├── Proyectos
+ │     ├── Proyecto 1
+ │     ├── Proyecto 2
+ │     └── Proyecto 3
+ ├── Sobre mí
+ │     ├── Habilidades técnicas
+ │     ├── Formación / Experiencia
+ │     └── Filosofía profesional
+ ├── Blog / Noticias
+ │     └── Entradas
+ └── Contacto
+       ├── Formulario
+       └── Enlaces externos
